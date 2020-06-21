@@ -1,12 +1,25 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
+import { Produit } from '../model/produit';
 
-export class ProduitItem extends React.Component {
+interface ProduitItemProps  {
+    produit: Produit;
+  };
+  interface ProduitItemState {
+    time: Date
+  };
+
+
+export class ProduitItem extends React.Component<ProduitItemProps,ProduitItemState> {
+ 
+
   render() {
     return (
     <View style={styles.main_container}>
-        <Text style={styles.nom_text}>Nom du produit</Text>
-        <Text style={styles.prix_text}>prix</Text>
+        <Text style={styles.nom_text}>{this.props.produit.nom}</Text>
+
+        <Text style={styles.prix_text}>{this.props.produit.prix}</Text>
+       
     </View>
     )
   }

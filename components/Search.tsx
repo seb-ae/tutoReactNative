@@ -37,7 +37,7 @@ export default class Search extends React.Component<SearchProps, SearchState>  {
         <FlatList
           data={PRODUCTS}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={({item}) => <ProduitItem/>}
+          renderItem={({item}) => <ProduitItem produit={item}/>}
         />
       </View>
     )
