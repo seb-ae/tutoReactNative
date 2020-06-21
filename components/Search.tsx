@@ -3,6 +3,7 @@
 import React from 'react'
 import { StyleSheet,View, TextInput, Button, FlatList, Text } from 'react-native'
 import {PRODUCTS} from '../helpers/produits-data'
+import { ProduitItem } from './ProduitItem';
 
 const styles =  StyleSheet.create({
   main_container: {
@@ -36,7 +37,7 @@ export default class Search extends React.Component<SearchProps, SearchState>  {
         <FlatList
           data={PRODUCTS}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={({item}) => <Text>{item.nom}</Text>}
+          renderItem={({item}) => <ProduitItem/>}
         />
       </View>
     )
